@@ -25,7 +25,18 @@ const router = createRouter({
     {
       path: '/molette',
       name: 'molette',
-      component: () => import('../views/Molette.vue')
+      component: () => import('../views/Molette.vue'),
+      children :[{
+        path: 'history',
+        name : 'History',
+        component : () => import('../views/History.vue'),
+      },
+      {
+        path: 'bioMolette',
+        name : 'BioMolette',
+        component : () => import('../views/BioMolette.vue'),
+      }
+  ]
     },
     {
       path: '/prestation',
